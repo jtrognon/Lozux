@@ -30,15 +30,46 @@ export default {
 </script>
 
 <template>
-  <div class="en_tete">
-    <p>
-      {{ titre }}
-    </p>
-    <button class="boutton" @click="fermePopup(id)">{{ texteBouton }}</button>
+  <div class="popup">
+    <div class="enTete">
+      <p class="titre">
+        {{ titre }}
+      </p>
+      <button class="bouton" @click="fermePopup(id)">{{ texteBouton }}</button>
+    </div>
+    <p>{{ texte }}</p>
   </div>
-  <p>{{ texte }}</p>
 </template>
 
 <style scoped>
+
+.popup {
+  /*position*/
+  width: 500px;
+  position: absolute;
   
+  /*Bordure*/
+  border: solid 1.5px;
+  box-shadow: 10px 5px 5px grey;
+  background-color: white;
+
+  text-align: center;
+}
+
+.enTete {
+  display: flex;
+  justify-content: center;
+
+  background-color: grey;
+  border-bottom: solid 1.5px;
+}
+
+.bouton {
+  position: absolute;
+  right:0px;
+  height: 25px;
+  width: 20px;
+}
+
+
 </style>
