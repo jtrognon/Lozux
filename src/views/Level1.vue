@@ -6,6 +6,10 @@
         <span>{{ icon.name }}</span>
       </div>
     </div>
+    <script setup>
+    import '/resources/background/3DAssets/tux_hello.js'
+    </script>
+
 
     <div class="taskbar">
       <div class="start-button">Start</div>
