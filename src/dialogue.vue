@@ -55,7 +55,7 @@
     </div>
   </div>
     <div class="tux">
-        <img src="/favicon.ico" alt="Tux">
+        <img src="/image_tux.png" alt="Tux">
     </div>
 </template>
 
@@ -87,5 +87,9 @@
     margin: 10px;
 }
 
+img {
+    height: 80px;
+    width: 80px;
+}
 
 </style>
