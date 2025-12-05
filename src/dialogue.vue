@@ -4,30 +4,39 @@
 
     const dialogues = [
         {
-            texte: "Coucou, fais ça !",
+            texte: "BRAVO Tu as mis fin à ces conneries !",
             choix: [
-                {id: 1, texte: "Oui"},
-                {id: 2, texte: "Non"}
+                {id: 1, texte: "Génial"},
+                {id: 2, texte: "Oh non... J'aime bien avoir des pubs de merdes"}
             ]
         },
         {
-            texte: "Coucou, fais pas ça !",
+            texte: "Tu es fait pour linux !",
             choix: [
-                {id: 2, texte: "Just dance"},
-                {id: 2, texte: "MarioKart"},
-                {id: 3, texte: "Abandon"}
+                {id: 3, texte: "Génial, j'adore être fait pour linux"},
+                {id: 2, texte: "Je refuse"},
             ]
         },
         {
-            texte: "Fin !",
+            texte: "Tu es con",
             choix: [
-
+                {id: 4, texte: "Ok..."},
             ]
         },
         {
-            texte: "Mort ...",
+            texte: "Antonin est fier de toi !",
             choix: [
-
+                {id: 5, texte: "Génial, j'adore Antonin !"},
+            ]
+        },
+        {
+            texte: "Tux te juge et abandonne",
+            choix: [
+            ]
+        },
+        {
+            texte: "C'est super",
+            choix: [
             ]
         }
     ]
@@ -46,7 +55,7 @@
     </div>
   </div>
     <div class="tux">
-        <img src="/favicon.ico" alt="Tux">
+        <img src="/image_tux.png" alt="Tux">
     </div>
 </template>
 
@@ -78,5 +87,9 @@
     margin: 10px;
 }
 
+img {
+    height: 80px;
+    width: 80px;
+}
 
 </style>
