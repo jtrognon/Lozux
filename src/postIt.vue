@@ -1,19 +1,56 @@
 <script setup>
-    var titre = "Julie bg"
-    const texteBouton = "X"
-    var texte = "Voici une méchante pop up !"
+  const props = defineProps(['id', 'titre', 'contenu', 'action'])
+
+  const texteBouton = "X"
+
+  function fermePopup(){
+    document.querySelector("#"+props.id).remove()
+  }
 </script>
 
 <template>
-  <div class="en_tete">
-    <p>
-      {{ titre }}
-    </p>
-    <button class="boutton" @click="$emit('fermePopup')">{{ texteBouton }}</button>
+  <div class="popup" :id="props.id">
+    <div class="enTete">
+      <p class="titre">
+        {{ props.titre }}
+      </p>
+      <button class="bouton" @click="fermePopup(id)">{{ texteBouton }}</button>
+    </div>
+    <p>{{ props.contenu }}</p>
+
+    <button class="action" @click="fermePopup(id)" v-if="props.action != null">{{ props.action }}</button>
   </div>
-  <p>{{ texte }}</p>
 </template>
 
 <style scoped>
+
+.popup {
+  /*position*/
+  width: 500px;
+  position: absolute;
   
+  /*Bordure*/
+  border: solid 1.5px;
+  box-shadow: 10px 5px 5px grey;
+  background-color: white;
+
+  text-align: center;
+}
+
+.enTete {
+  display: flex;
+  justify-content: center;
+
+  background-color: grey;
+  border-bottom: solid 1.5px;
+}
+
+.bouton {
+  position: absolute;
+  right:0px;
+  height: 25px;
+  width: 20px;
+}
+
+
 </style>

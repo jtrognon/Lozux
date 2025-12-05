@@ -2,8 +2,28 @@
   import { ref } from "vue";
   import postIt from './postIt.vue'
 
-  var dialogIndex = ref(0)
-  const dialogs = ["Hey! Activate Windows 11.", "Oh no!!! it's a virus.", "Hello, I'm Tux!"]
+  var dialogueCourant = ref(1)
+  const popups = [
+    {
+      id: 1,
+      contenu: "Activez Windows !",
+      action: "Activer"
+    },
+    {
+      id: 2,
+      contenu: "Pensez aussi à faire ci et ça",
+      action: "faire ci et ça"
+    },
+    {
+      id: 3,
+      contenu: "Et ça et ça et ça et avez vous vu ça ??"
+    },
+    {
+      id: 4,
+      contenu: "Tux arrive et met halte à ces conneries",
+      action: "mettre fin à ces conneries"
+    },
+  ]
 
   function changeText() {
     console.log(dialogIndex);
@@ -11,24 +31,16 @@
     dialogIndex.value++;
   }
 
-  function fermePopup() {
-    document.querySelector("#popup_1").destroy();
-  }
-
 </script>
 
 <template>
-  <main>
-    <img src="/favicon.ico" alt="logo VueJS">
-    <p id="dialog">{{ dialogs[dialogIndex] }}</p>
-    <button @click="changeText()">OK</button>
-  </main>
+  <section id="popupSection" v-for="popup in popups">
+    <postIt :id="'popup_'+popup.id" :contenu="popup.contenu" :action="popup.action"/>
+  </section>
 
   <section id=" taskbar">
 
   </section>
-
-  <postIt id="popup_1" @fermePopup="fermePopup()"/>
 </template>
 
 <style scoped>
