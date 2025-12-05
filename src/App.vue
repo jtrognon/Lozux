@@ -48,12 +48,13 @@
     <postIt v-for="popup in popups" :id="'popup_'+popup.id" :contenu="popup.contenu" :action="popup.action" :left="popup.left" :top="popup.top" @fermeture="popupsRestant--"/>
   </section>
 
-  <section v-if="popupsRestant==0">toto</section>
-
   <dialogue v-if="popupsRestant==0" />
 
   <Level1/>
 </template>
 
 <style scoped>
+  .desktop {
+    z-index: -1;
+  }
 </style>

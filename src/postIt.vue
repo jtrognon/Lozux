@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <div class="popup" :id="props.id" :style="'left:'+props.left+'%; top:'+props.top+'%;'">
+  <div class="popup" :id="props.id" :style="'left:'+props.left+'vw; top:'+props.top+'vh;'">
     <div class="enTete">
       <p class="titre">
         {{ props.titre }}

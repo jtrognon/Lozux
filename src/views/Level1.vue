@@ -82,7 +82,6 @@
 }
 
 .start-button {
-  background: #0078d7;
   padding: 0 15px;
   height: 100%;
   display: flex;
@@ -107,5 +106,10 @@
   display: flex;
   gap: 8px;
   align-items: center;
+}
+
+.start-button>img {
+  height: 40px;
+  width: 40px;
 }
 </style>
