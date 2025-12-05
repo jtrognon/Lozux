@@ -112,4 +112,9 @@
   gap: 8px;
   align-items: center;
 }
+
+.start-button>img {
+  height: 40px;
+  width: 40px;
+}
 </style>

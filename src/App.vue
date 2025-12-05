@@ -54,7 +54,7 @@
 </template>
 
 <style scoped>
-.desktop{
-  z-index: -1;
-}
+  .desktop {
+    z-index: -1;
+  }
 </style>
