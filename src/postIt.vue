@@ -18,11 +18,11 @@
       <p class="titre">
         {{ props.titre }}
       </p>
-      <button class="bouton" @click="fermePopup(id)">{{ texteBouton }}</button>
+      <button class="bouton" @click="fermePopup(id); $emit('fermeture')">{{ texteBouton }}</button>
     </div>
     <p>{{ props.contenu }}</p>
 
-    <button class="action" @click="fermePopup(id)" v-if="props.action != null">{{ props.action }}</button>
+    <button class="action" @click="fermePopup(id); $emit('fermeture')" v-if="props.action != null">{{ props.action }}</button>
   </div>
 </template>
 
