@@ -1,8 +1,6 @@
 <script setup>
-  import { ref } from "vue";
   import postIt from './postIt.vue'
 
-  var dialogueCourant = ref(1)
   const popups = [
     {
       id: 1,
@@ -25,17 +23,14 @@
     },
   ]
 
-  function changeText() {
-    console.log(dialogIndex);
-    
-    dialogIndex.value++;
+  function entierAleatoire(){
+    return Math.floor(Math.random() * 65);
   }
-
 </script>
 
 <template>
   <section id="popupSection" v-for="popup in popups">
-    <postIt :id="'popup_'+popup.id" :contenu="popup.contenu" :action="popup.action"/>
+    <postIt :id="'popup_'+popup.id" :contenu="popup.contenu" :action="popup.action" :left="entierAleatoire()" :top="entierAleatoire()"/>
   </section>
 
   <section id=" taskbar">
@@ -44,5 +39,4 @@
 </template>
 
 <style scoped>
-
 </style>

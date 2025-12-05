@@ -1,15 +1,19 @@
 <script setup>
-  const props = defineProps(['id', 'titre', 'contenu', 'action'])
+  const props = defineProps(['id', 'titre', 'contenu', 'action', 'top', 'left', 'top'])
 
   const texteBouton = "X"
 
   function fermePopup(){
     document.querySelector("#"+props.id).remove()
   }
+
+  function entierAleatoire(){
+    Math.floor(Math.random() * 10);
+  }
 </script>
 
 <template>
-  <div class="popup" :id="props.id">
+  <div class="popup" :id="props.id" :style="'left:'+props.left+'%; top:'+props.top+'%;'">
     <div class="enTete">
       <p class="titre">
         {{ props.titre }}
@@ -52,5 +56,8 @@
   width: 20px;
 }
 
+.action{
+  margin-bottom: 10px;
+}
 
 </style>
