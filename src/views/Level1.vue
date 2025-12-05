@@ -82,12 +82,16 @@
 }
 
 .start-button {
-  background: #0078d7;
   padding: 0 15px;
   height: 100%;
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.start-button>img {
+  height: 40px;
+  width: 40px;
 }
 
 .tasks {

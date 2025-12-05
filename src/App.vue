@@ -31,8 +31,8 @@
     },
     {
       id: 4,
-      contenu: "Tux arrive et met halte à ces conneries",
-      action: "mettre fin à ces conneries",
+      contenu: "Tux arrive et met halte à ces bêtises",
+      action: "mettre fin à ces bêtises",
       left: entierAleatoire(),
       top: entierAleatoire()
     },
@@ -47,8 +47,6 @@
   <section id="popupSection" v-if="popupsRestant > 0">
     <postIt v-for="popup in popups" :id="'popup_'+popup.id" :contenu="popup.contenu" :action="popup.action" :left="popup.left" :top="popup.top" @fermeture="popupsRestant--"/>
   </section>
-
-  <section v-if="popupsRestant==0">toto</section>
 
   <dialogue v-if="popupsRestant==0" />
 

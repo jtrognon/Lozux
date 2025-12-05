@@ -4,10 +4,10 @@
 
     const dialogues = [
         {
-            texte: "BRAVO Tu as mis fin à ces conneries !",
+            texte: "BRAVO Tu y as mis fin !",
             choix: [
                 {id: 1, texte: "Génial"},
-                {id: 2, texte: "Oh non... J'aime bien avoir des pubs de merdes"}
+                {id: 2, texte: "Oh non... J'aime bien avoir des pubs"}
             ]
         },
         {
@@ -18,24 +18,24 @@
             ]
         },
         {
-            texte: "Tu es con",
+            texte: "C'est dommage...",
             choix: [
-                {id: 4, texte: "Ok..."},
+                {id: 4, texte: "Ok."},
             ]
         },
         {
-            texte: "Antonin est fier de toi !",
+            texte: "On est fier de toi !",
             choix: [
-                {id: 5, texte: "Génial, j'adore Antonin !"},
+                {id: 5, texte: "Génial !"},
             ]
         },
         {
-            texte: "Tux te juge et abandonne",
+            texte: "Installe quand même linux",
             choix: [
             ]
         },
         {
-            texte: "C'est super",
+            texte: "C'est super (installe linux)",
             choix: [
             ]
         }
@@ -62,15 +62,16 @@
 <style scoped>
 
 .pageDialogue {
-    display: flex;
+	display: flex;
+	align-items: center;
     justify-content: center;
-    align-content: space-between;
 }
 
 .dialogue {
   /*position*/
+  top: 10vh;
   width: 500px;
-  position: absolute;
+  position: fixed;
   
   /*Bordure*/
   border: solid 1.5px;
@@ -88,6 +89,7 @@
 }
 
 img {
+    position: fixed;
     height: 80px;
     width: 80px;
 }
