@@ -2,6 +2,7 @@
   import {ref} from "vue" 
   import postIt from './postIt.vue'
   import dialogue from './dialogue.vue'
+  import Level1  from "./views/Level1.vue";
 
   const popupsRestant = ref(4);
   
@@ -51,9 +52,7 @@
 
   <dialogue v-if="popupsRestant==0" />
 
-  <section id=" taskbar">
-
-  </section>
+  <Level1/>
 </template>
 
 <style scoped>

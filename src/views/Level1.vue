@@ -8,7 +8,7 @@
     </div>
 
     <div class="taskbar">
-      <div class="start-button">Start</div>
+      <div class="start-button"><img src="/windows11.png" alt=""></div>
       <div class="tasks">
         <div v-for="task in tasks" :key="task" class="task">{{ task }}</div>
       </div>
@@ -20,26 +20,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Level1",
-  data() {
-    return {
-      icons: [
-        { name: "Mon PC", src: "/resources/icons/pc.png" },
-        { name: "Corbeille", src: "/resources/icons/trash.png" },
-        { name: "Docs", src: "/resources/icons/folder.png" }
-      ],
-      tasks: ["Chrome", "VS Code"],
-      time: new Date().toLocaleTimeString()
-    };
-  },
-  mounted() {
+<script setup>
+  const icons = [
+    { name: "Suite Office", src: "/bureau.png" },
+    { name: "Edge", src: "/edge.png" },
+    { name: "Docs", src: "/explorer.png" }
+  ]
+  const tasks = ["Chrome", "VS Code"]
+  const time = new Date().toLocaleTimeString()
+
+  function mounted() {
     setInterval(() => {
       this.time = new Date().toLocaleTimeString();
     }, 1000);
   }
-};
+
 </script>
 
 <style scoped>
@@ -47,7 +42,7 @@ export default {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('/resources/background/wallpaper.jpg') no-repeat center center;
+  background: url('/wallpaper.jpeg') no-repeat center center;
   background-size: cover;
   display: flex;
   flex-direction: column;
