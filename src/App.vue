@@ -1,30 +1,20 @@
-<script>
-  import ButtonCounter from './ButtonCounter.vue'
+<script setup>
+  import { ref } from "vue";
+  import postIt from './postIt.vue'
 
-  export default {
-  // Properties returned from data() become reactive state
-  // and will be exposed on `this`.
-  data() {
-    return {
-      dialogIndex: 0,
-      dialogs: ["Hey! Activate Windows 11.", "Oh no!!! it's a virus.", "Hello, I'm Tux!"]
-    }
-  },
+  var dialogIndex = ref(0)
+  const dialogs = ["Hey! Activate Windows 11.", "Oh no!!! it's a virus.", "Hello, I'm Tux!"]
 
-  // Methods are functions that mutate state and trigger updates.
-  // They can be bound as event handlers in templates.
-  methods: {
-    changeText() {
-      this.dialogIndex++;
-    }
-  },
-
-  // Lifecycle hooks are called at different stages
-  // of a component's lifecycle.
-  // This function will be called when the component is mounted.
-  mounted() {
+  function changeText() {
+    console.log(dialogIndex);
+    
+    dialogIndex.value++;
   }
-}
+
+  function fermePopup() {
+    document.querySelector("#popup_1").destroy();
+  }
+
 </script>
 
 <template>
@@ -37,6 +27,8 @@
   <section id=" taskbar">
 
   </section>
+
+  <postIt id="popup_1" @fermePopup="fermePopup()"/>
 </template>
 
 <style scoped>
